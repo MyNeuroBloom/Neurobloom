@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroBloom™ | Understand. Support. Grow.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5B46F4;
+            --primary-dark: #4330D0;
+            --primary-light: #EDE9FE;
+            --secondary: #00C9A7;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1DA851;
+            --dark: #161826;
+            --dark-card: #202336;
+            --light: #F8FAFC;
+            --gray: #475569;
+            --gray-light: #94A3B8;
+            --card-bg: #FFFFFF;
+            --border: #E2E8F0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .logo-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(91, 70, 244, 0.2);
+        }
+        .logo-text {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        .logo-sub {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--gray);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-top: -4px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.6rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.25s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-btn {
+            background: var(--primary);
+            color: #FFFFFF !important;
+            padding: 0.65rem 1.4rem;
+            border-radius: 50px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 14px rgba(91, 70, 244, 0.25);
+        }
+        .nav-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 5rem 2rem 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            margin-bottom: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        .hero-content h1 {
+            font-size: 3.25rem;
+            color: var(--dark);
+            margin-bottom: 1.4rem;
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 2.2rem;
+        }
+        .audience-quick-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .quick-card {
+            background: #FFFFFF;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 1.35rem;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.25s ease;
+            display: block;
+        }
+        .quick-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(91, 70, 244, 0.1);
+        }
+        .quick-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .quick-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0;
+            line-height: 1.45;
+        }
+        .hero-visual {
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 45px rgba(22, 24, 38, 0.06);
+            text-align: center;
+        }
+        .hero-img-showcase {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        .lang-strip {
+            margin-top: 1.2rem;
+            display: inline-block;
+            background: #FFFFFF;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        /* Buttons */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: var(--whatsapp);
+            color: #FFFFFF;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.02rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.28);
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-dark);
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.02rem;
+            box-shadow: 0 10px 25px rgba(91, 70, 244, 0.25);
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 1rem 2.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.02rem;
+            transition: all 0.25s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            filter: brightness(1.05);
+            transform: translateY(-2px);
+        }
+
+        /* Section Containers */
+        section {
+            padding: 5.5rem 2rem;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem auto;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.15rem;
+        }
+
+        /* Parent Section Styling */
+        .audience-wrapper {
+            background: #FFFFFF;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            padding: 4rem;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03);
+        }
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+        .content-col h3 {
+            font-size: 2.1rem;
+            color: var(--dark);
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+        .content-col p {
+            color: var(--gray);
+            margin-bottom: 1.35rem;
+            font-size: 1.05rem;
+        }
+        .highlight-callout {
+            background: #F4F2FF;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 14px 14px 0;
+            margin: 1.8rem 0;
+        }
+        .highlight-callout h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+        .highlight-callout p {
+            margin-bottom: 0;
+            font-size: 0.98rem;
+            color: var(--dark);
+        }
+        .checklist-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        .checklist-card h4 {
+            font-size: 1.35rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .benefit-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        .check-badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            min-width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-top: 3px;
+        }
+
+        /* Therapist Section (Dark Executive Theme) */
+        .therapist-wrapper {
+            background: var(--dark);
+            color: #FFFFFF;
+            border-radius: 28px;
+            padding: 4.5rem 4rem;
+            box-shadow: 0 25px 50px rgba(22, 24, 38, 0.18);
+        }
+        .therapist-wrapper h3 {
+            color: #FFFFFF;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.25;
+        }
+        .therapist-wrapper p {
+            color: #CBD5E1;
+            font-size: 1.05rem;
+            margin-bottom: 1.35rem;
+        }
+        .therapist-pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0 3.5rem 0;
+        }
+        .therapist-pain-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.8rem;
+        }
+        .therapist-pain-card h4 {
+            color: #FF8787;
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+        }
+        .therapist-pain-card p {
+            font-size: 0.95rem;
+            color: #94A3B8;
+            margin-bottom: 0;
+        }
+        .therapist-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .therapist-feature-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 2rem;
+            transition: border-color 0.25s;
+        }
+        .therapist-feature-box:hover {
+            border-color: var(--secondary);
+        }
+        .therapist-feature-box h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+        .therapist-feature-box p {
+            color: #CBD5E1;
+            font-size: 0.98rem;
+            margin-bottom: 0;
+        }
+
+        /* Video Showcase Section */
+        .video-section {
+            background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+            color: #FFFFFF;
+            padding: 5.5rem 2rem;
+            max-width: 100%;
+        }
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .video-frame {
+            background: #0F172A;
+            padding: 1rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+        .video-frame video {
+            width: 100%;
+            max-height: 460px;
+            border-radius: 16px;
+            background: #000;
+        }
+
+        /* Learn Section */
+        .learn-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3.5rem;
+            align-items: center;
+            background: #FFFFFF;
+            padding: 4rem;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+        }
+        .topic-pill-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .topic-pill {
+            background: var(--light);
+            border: 1px solid var(--border);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .topic-pill span {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--gray);
+            font-weight: 400;
+            margin-top: 0.2rem;
+        }
+
+        /* Split Enrollment Section (Parent WhatsApp + Therapist Form) */
+        .enroll-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 2.5rem;
+            align-items: stretch;
+        }
+        .parent-enroll-card {
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            border: 2px solid #C7D2FE;
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .therapist-form-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--dark);
+            background: var(--light);
+            transition: border-color 0.2s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #FFFFFF;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Legal & Compliance Boxes */
+        .legal-container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .legal-box {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+        }
+        .legal-box h3 {
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+        .legal-box p, .legal-box ul {
+            margin-bottom: 1.1rem;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        .legal-box ul {
+            padding-left: 1.5rem;
+        }
+        .legal-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #FFFFFF;
+            padding: 4.5rem 2rem 2.5rem 2rem;
+            margin-top: 3rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 3rem;
+        }
+        .footer-brand h2 {
+            color: #FFFFFF;
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand p {
+            color: var(--gray-light);
+            max-width: 420px;
+            font-size: 0.95rem;
+        }
+        .footer-links h4 {
+            color: #FFFFFF;
+            margin-bottom: 1.1rem;
+            font-size: 1.05rem;
+        }
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.25s;
+        }
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 960px) {
+            .hero, .two-col-grid, .therapist-pain-grid, .therapist-solution-grid, .video-container, .learn-grid, .enroll-grid, .form-row {
+                grid-template-columns: 1fr;
+            }
+            .audience-wrapper, .therapist-wrapper, .learn-grid, .parent-enroll-card, .therapist-form-card {
+                padding: 2.2rem 1.5rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="neurobloom .jpeg" onerror="this.src='neurobloom.jpeg'" alt="NeuroBloom Logo" class="logo-img">
+                <div>
+                    <span class="logo-text">NeuroBloom™</span>
+                    <span class="logo-sub">Understand. Support. Grow.</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#parents">For Parents</a></li>
+                <li><a href="#professionals">For Therapists</a></li>
+                <li><a href="#videos">Video Library</a></li>
+                <li><a href="#learn-section">Learn Hub</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#enroll" class="nav-btn">Enroll Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Built on Years of Clinical Expertise</span>
+            <h1>Personalized Child Development &amp; <span>Clinical Therapy Platform.</span></h1>
+            <p>NeuroBloom brings together clinical assessments, over 200 video-guided therapy exercises, daily progress tracking, and a dedicated parent-therapist knowledge portal—empowering families at home and elevating clinical practices everywhere.</p>
+            
+            <!-- Clickable Role Selectors -->
+            <div class="audience-quick-cards">
+                <a href="#parents" class="quick-card">
+                    <h4>I Am a Parent <span>&rarr;</span></h4>
+                    <p>See how guided daily video plans accelerate your child's developmental milestones at home.</p>
+                </a>
+                <a href="#professionals" class="quick-card">
+                    <h4>I Am a Therapist / Clinic <span>&rarr;</span></h4>
+                    <p>Discover how to extend your clinical reach, publish custom content, and enroll your practice.</p>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="sensory.jpeg" alt="Child Engaging in Sensory Integration Therapy" class="hero-img-showcase">
+            <div class="lang-strip">Available in English, Hindi, Marathi &amp; Gujarati</div>
+        </div>
+    </section>
+
+    <!-- CLICKABLE SECTION 1: FOR PARENTS & FAMILIES -->
+    <section id="parents">
+        <div class="section-header">
+            <span class="badge">For Parents &amp; Caregivers</span>
+            <h2>Turn Everyday Moments at Home Into Meaningful Developmental Progress</h2>
+            <p>Supporting your efforts with clear, step-by-step guidance—because your child's biggest breakthroughs begin with you.</p>
+        </div>
+
+        <div class="audience-wrapper">
+            <div class="two-col-grid">
+                <div class="content-col">
+                    <h3>Stop Guessing at Home. Start Practicing with Complete Confidence.</h3>
+                    <p>As a parent, you want to give your child every possible advantage. Yet once you leave the clinic, trying to remember how to perform exercises or wondering if your child is making real progress can feel overwhelming.</p>
+                    <p>Research and clinical experience show a simple truth: <strong>a child spends only 1 to 2 hours a week in a therapy clinic, and over 160 hours at home.</strong> What happens during those hours at home determines how quickly your child builds new skills.</p>
+                    
+                    <div class="highlight-callout">
+                        <h4>Why Your Child Achieves Faster Results with NeuroBloom:</h4>
+                        <p>The developing brain learns through consistent, structured repetition. By practicing 35 to 45 minutes of targeted, therapist-designed activities every day with clear video demonstrations, your child builds stronger neural connections—accelerating progress in attention, speech, sensory regulation, and motor skills.</p>
+                    </div>
+
+                    <p>Whether your child has a clinical diagnosis—such as <strong>Autism Spectrum Disorder (ASD), Sensory Processing Disorder (SPD), ADHD, Learning Disability (LD), Global Developmental Delay (GDD), Speech Delay, or Coordination Disorder</strong>—or you simply want a structured <strong>Skill Development Program</strong> for memory, focus, and coordination, NeuroBloom builds a personalized plan tailored to your child.</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>Everything Included in Your Parent Account:</h4>
+                    <ul class="benefit-list">
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div><strong>Personalized Daily Plans:</strong> Receive 6 structured activities each day across Sensory Regulation, Gross Motor, Fine Motor, Attention, and Communication—complete with why each activity was chosen for your child.</div>
+                        </li>
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div><strong>Step-by-Step Video Demonstrations:</strong> Watch clear videos before every exercise so you know exactly how to guide, position, and support your child safely at home.</div>
+                        </li>
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div><strong>One-Tap Progress &amp; Smart Replacement:</strong> Mark each activity as <em>Could Not Do</em>, <em>Done With Help</em>, or <em>Independent</em>. If an exercise is mastered or too challenging, replace it instantly with a matching developmental goal.</div>
+                        </li>
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div><strong>Weekly &amp; Monthly Growth Reports:</strong> Track your child's active streaks, independence percentages, and milestone improvements over time—and share reports directly on WhatsApp.</div>
+                        </li>
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div><strong>Regularly Updated Learn Library &amp; Ask a Doctor:</strong> Read new parenting articles every week and submit your questions directly to experienced doctors for a personal response within 24 to 48 hours.</div>
+                        </li>
+                    </ul>
+                    <div style="margin-top: 2.2rem;">
+                        <a href="https://wa.me/919136801368?text=Hello%2C%20I%20am%20a%20parent%20visiting%20www.myneurobloom.com%20and%20would%20like%20to%20enroll%20my%20child." target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%;">
+                            &#128172; Enroll as a Parent on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLICKABLE SECTION 2: FOR CLINICAL PRACTITIONERS & THERAPISTS -->
+    <section id="professionals">
+        <div class="section-header">
+            <span class="badge">For Occupational Therapists, Clinicians &amp; Centers</span>
+            <h2>Extend Your Clinical Impact Beyond the Therapy Room</h2>
+            <p>Eliminate home-program drop-offs, digitize your clinical workflows, and empower every family in your practice.</p>
+        </div>
+
+        <div class="therapist-wrapper">
+            <div style="max-width: 900px;">
+                <span class="badge" style="background: rgba(0, 201, 167, 0.15); color: var(--secondary);">Built by Clinicians, for Clinicians</span>
+                <h3>Your Expertise Transforms Lives in the Clinic. Don't Let the Other 166 Hours Hold Your Clients Back.</h3>
+                <p>Every week, you invest your clinical skill and energy into helping children regulate, focus, and achieve new developmental milestones. Yet even the most dedicated therapist faces three persistent barriers that slow down client outcomes:</p>
+            </div>
+
+            <!-- The Clinical Challenges -->
+            <div class="therapist-pain-grid">
+                <div class="therapist-pain-card">
+                    <h4>1. The 166-Hour Home Gap</h4>
+                    <p>A child attends therapy for 1 to 2 hours a week. Without structured daily sensory and motor reinforcement at home, children regress between sessions—forcing you to spend valuable clinic time re-regulating rather than advancing.</p>
+                </div>
+                <div class="therapist-pain-card">
+                    <h4>2. Forgotten Verbal Instructions</h4>
+                    <p>A brief 5-minute handover at the clinic door is not enough. Parents often forget proper hand placement, pacing, or sensory grading, leading to improper execution or abandoned home programs.</p>
+                </div>
+                <div class="therapist-pain-card">
+                    <h4>3. Subjective Follow-Ups &amp; Admin Fatigue</h4>
+                    <p>Relying on parents' memory during review sessions leaves you without objective data. Meanwhile, writing repetitive home plans and answering the same questions drains hours of your clinical week.</p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem;">
+                <h3>How NeuroBloom Elevates and Enhances Your Clinical Practice</h3>
+                <p>NeuroBloom acts as your clinic's digital companion—turning parents into confident, accurate co-therapists at home while giving you complete clinical control, custom publishing power, and real-time client telemetry.</p>
+
+                <div class="therapist-solution-grid">
+                    <div class="therapist-feature-box">
+                        <h4>Structured Clinical Assessment Module</h4>
+                        <p>Conduct comprehensive baseline assessments and intake evaluations directly inside the platform. Map out diagnoses, sensory profiles, and primary concerns to generate tailored therapy programs in minutes instead of hours.</p>
+                    </div>
+                    <div class="therapist-feature-box">
+                        <h4>200+ Pre-Loaded Exercises + Add Your Own</h4>
+                        <p>Start immediately with over 200 evidence-based exercises across Sensory Regulation, Vestibular, Proprioceptive, Gross &amp; Fine Motor, and Cognitive domains. Want to prescribe your own signature methods? Easily upload and assign your own custom exercises and videos for your clinic's clients.</p>
+                    </div>
+                    <div class="therapist-feature-box">
+                        <h4>Write &amp; Publish Articles to Your Clinic Users</h4>
+                        <p>Position yourself as the trusted authority for your families. Author your own clinical articles, home strategies, and educational guides inside the <strong>Learn Portal</strong> and publish them directly to the parents enrolled under your clinic.</p>
+                    </div>
+                    <div class="therapist-feature-box">
+                        <h4>Objective Home Telemetry &amp; Monthly Reports</h4>
+                        <p>Walk into every session prepared. View real-time data on how many days a family practiced, which exercises were completed independently versus with assistance, and review automated Weekly &amp; Monthly Progress Reports to refine your intervention plan with precision.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; background: rgba(255,255,255,0.06); padding: 2.2rem; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+                    <div>
+                        <h4 style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.3rem;">Ready to Bring NeuroBloom to Your Clinic?</h4>
+                        <p style="margin-bottom: 0; color: #CBD5E1; font-size: 0.98rem;">Register your practice using our dedicated Clinical Practitioner Form below.</p>
+                    </div>
+                    <a href="#therapist-form-box" class="btn-secondary">Complete Therapist Enrollment Form &darr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO DEMONSTRATION SHOWCASE -->
+    <section id="videos" class="video-section">
+        <div class="video-container">
+            <div>
+                <span class="badge" style="background: rgba(255,255,255,0.15); color: #E0E7FF;">200+ Video-Guided Exercises</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.2rem; color: #FFFFFF; line-height: 1.2;">See Every Exercise in Action with Clinical Video Demonstrations</h2>
+                <p style="color: #CBD5E1; margin-bottom: 1.5rem; font-size: 1.1rem;">Written instructions alone cannot show the gentle rhythm of deep-pressure proprioceptive rolling or the exact setup of a vestibular swing activity. NeuroBloom includes high-definition video demonstrations so parents can replicate clinical techniques safely and accurately at home.</p>
+                <ul class="benefit-list" style="color: #E2E8F0;">
+                    <li style="color: #E2E8F0;">
+                        <span class="check-badge" style="background: var(--secondary); color: var(--dark);">&#10003;</span>
+                        <div><strong>200+ Evidence-Based Activities:</strong> Covering tactile, vestibular, proprioceptive, gross motor, fine motor, cognitive, and social-emotional domains.</div>
+                    </li>
+                    <li style="color: #E2E8F0;">
+                        <span class="check-badge" style="background: var(--secondary); color: var(--dark);">&#10003;</span>
+                        <div><strong>Continuous Additions &amp; Custom Uploads:</strong> Parents receive regular exercise updates, and therapists can add their own custom exercises for their clinic's families.</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="video-frame">
+                <video controls autoplay muted loop playsinline poster="sensory.jpeg">
+                    <source src="deep pressure roller.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <p style="margin-top: 0.9rem; font-weight: 700; color: #FFFFFF; font-size: 0.95rem;">Sample Exercise Demonstration Video</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARN KNOWLEDGE PORTAL SECTION -->
+    <section id="learn-section">
+        <div class="section-header">
+            <span class="badge">The Learn Knowledge Hub</span>
+            <h2>Empowering Parents with Knowledge &amp; Giving Therapists a Publishing Voice</h2>
+            <p>A continuously updated library of practical parenting guides alongside clinic-authored educational resources.</p>
+        </div>
+
+        <div class="learn-grid">
+            <div>
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Curated Developmental Education + Custom Clinic Publishing</h3>
+                <p style="color: var(--gray); margin-bottom: 1.2rem;">When parents understand <em>why</em> a behavior happens, they respond with patience and clarity. Our in-app <strong>Learn Section</strong> delivers regular article updates organized into five intuitive pillars:</p>
+                
+                <div class="topic-pill-list">
+                    <div class="topic-pill">&#129504; Inside Your Child's Brain <span>Neurological &amp; sensory processing</span></div>
+                    <div class="topic-pill">&#127968; What You See at Home <span>Observational guides &amp; daily behaviors</span></div>
+                    <div class="topic-pill">&#128161; What Actually Helps <span>Evidence-based practical strategies</span></div>
+                    <div class="topic-pill">&#10084;&#65039; Your Role as a Parent <span>Building confidence &amp; co-regulation</span></div>
+                    <div class="topic-pill">&#127891; School &amp; Real World <span>Classroom readiness &amp; social skills</span></div>
+                    <div class="topic-pill">&#9997;&#65039; Therapist-Authored Guides <span>Custom articles from your own clinic</span></div>
+                </div>
+
+                <div class="highlight-callout" style="margin-top: 1.5rem;">
+                    <h4>Exclusive Feature for Enrolled Therapists:</h4>
+                    <p>Clinicians can write and publish their own articles, sensory diets, and parenting tips directly inside the app—making them immediately visible to the families registered under their clinic.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="learn.jpeg" alt="NeuroBloom Learn Section Mobile Screen" style="max-width: 290px; width: 100%; border-radius: 22px; box-shadow: 0 20px 45px rgba(0,0,0,0.14); border: 1px solid var(--border);">
+            </div>
+        </div>
+    </section>
+
+    <!-- DEDICATED ENROLLMENT SECTION (Parent WhatsApp + Therapist Form) -->
+    <section id="enroll">
+        <div class="section-header">
+            <span class="badge">Get Started with NeuroBloom</span>
+            <h2>Enroll Today: Dedicated Pathways for Parents &amp; Clinicians</h2>
+            <p>Choose your role below to begin your journey with NeuroBloom.</p>
+        </div>
+
+        <div class="enroll-grid">
+            <!-- Left Column: Parent WhatsApp Enrollment -->
+            <div class="parent-enroll-card">
+                <div>
+                    <span class="badge" style="background: #FFFFFF;">For Parents &amp; Families</span>
+                    <h3 style="font-size: 1.9rem; margin-bottom: 1rem; color: var(--dark);">Parent Quick Enrollment via WhatsApp</h3>
+                    <p style="color: var(--gray); margin-bottom: 1.5rem;">Ready to start personalized daily therapy or skill development routines for your child? Connect with our NeuroBloom support team directly on WhatsApp for instant onboarding assistance.</p>
+                    <ul class="benefit-list" style="margin-bottom: 2rem;">
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div>Add up to 2 child profiles under a single parent account.</div>
+                        </li>
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div>Available in English, Hindi, Marathi, and Gujarati.</div>
+                        </li>
+                        <li>
+                            <span class="check-badge">&#10003;</span>
+                            <div>Direct WhatsApp Helpline: <strong>+91 9136801368</strong></div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919136801368?text=Hello%2C%20I%20am%20a%20parent%20visiting%20www.myneurobloom.com%20and%20would%20like%20to%20enroll%20my%20child." target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%;">
+                    &#128172; Message on WhatsApp to Enroll (+91 9136801368)
+                </a>
+            </div>
+
+            <!-- Right Column: Clinic & Therapist Enrollment Form -->
+            <div id="therapist-form-box" class="therapist-form-card">
+                <span class="badge">For Therapists &amp; Child Development Centers</span>
+                <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--dark);">Clinical Practitioner Enrollment Form</h3>
+                <p style="color: var(--gray); margin-bottom: 1.5rem; font-size: 0.95rem;">Complete the form below to set up your clinic's practitioner account, access the assessment &amp; 200+ exercise library, and publish custom content for your clients.</p>
+
+                <form action="https://formsubmit.co/myneurobloomsupport@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New NeuroBloom Therapist / Clinic Enrollment Request">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="therapistName">Full Name &amp; Title *</label>
+                            <input type="text" id="therapistName" name="Therapist_Name" class="form-control" placeholder="e.g., Dr. Aditi Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialty">Clinical Specialty *</label>
+                            <select id="specialty" name="Specialty" class="form-control" required>
+                                <option value="">Select Specialty</option>
+                                <option value="Occupational Therapist">Occupational Therapist (OT)</option>
+                                <option value="Speech & Language Pathologist">Speech Therapist / SLP</option>
+                                <option value="Special Educator">Special Educator</option>
+                                <option value="Child Psychologist / Behavior Therapist">Child Psychologist / ABA</option>
+                                <option value="Physiotherapist">Pediatric Physiotherapist</option>
+                                <option value="Clinic / Center Director">Clinic / Center Director</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clinicName">Clinic / Practice Name *</label>
+                            <input type="text" id="clinicName" name="Clinic_Name" class="form-control" placeholder="Enter your clinic or center name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City &amp; State *</label>
+                            <input type="text" id="city" name="City" class="form-control" placeholder="e.g., Mumbai, Maharashtra" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Mobile / WhatsApp Number *</label>
+                            <input type="tel" id="phone" name="Phone_Number" class="form-control" placeholder="+91 98XXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Professional Email Address *</label>
+                            <input type="email" id="email" name="Email" class="form-control" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientCount">Approximate Number of Active Pediatric Clients</label>
+                        <select id="clientCount" name="Client_Volume" class="form-control">
+                            <option value="1 to 20 Clients">1 to 20 Clients</option>
+                            <option value="21 to 50 Clients">21 to 50 Clients</option>
+                            <option value="50+ Clients">50+ Clients (Multi-Therapist Center)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                        Submit Clinic &amp; Therapist Enrollment Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY POLICY SECTION (Google Play Compliant) -->
+    <section id="privacy">
+        <div class="legal-container">
+            <div class="section-header" style="margin-bottom: 2.5rem;">
+                <h2>Privacy Policy</h2>
+                <p>Effective Date: November 2026 | Strict protection for family and clinical data.</p>
+            </div>
+            <div class="legal-box">
+                <h3>1. Information We Collect</h3>
+                <p>NeuroBloom collects account registration details (Full Name, Email Address, Mobile Phone Number), child profile details (Child's Name, Date of Birth, Program Type, selected Diagnoses, and targeted Skill Areas), and daily activity completion logs to generate individualized developmental plans and progress reports.</p>
+                
+                <h3>2. How We Use Your Information</h3>
+                <p>Your information is used strictly to deliver personalized therapy and skill development programs, track weekly and monthly developmental milestones, facilitate Q&amp;A responses from clinical experts, and allow authorized therapists to monitor progress for clients enrolled under their clinic.</p>
+                
+                <h3>3. Data Protection &amp; Confidentiality</h3>
+                <p>We implement industry-standard encryption, secure cloud storage, and strict access controls to protect personal and health-related records against unauthorized access, alteration, or disclosure. We never sell personal or child developmental data to third-party advertisers.</p>
+
+                <h3>4. Privacy Inquiries</h3>
+                <p>For any questions regarding data privacy or security compliance, please email us at <strong>myneurobloomsupport@gmail.com</strong> or message our official WhatsApp Helpline at <strong>+91 9136801368</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCOUNT DELETION INSTRUCTIONS (Google Play Compliant) -->
+    <section id="deletion" style="padding-top: 0;">
+        <div class="legal-container">
+            <div class="section-header" style="margin-bottom: 2.5rem;">
+                <h2>Account Deletion Instructions</h2>
+                <p>Clear, simple steps to request permanent removal of your NeuroBloom account and data.</p>
+            </div>
+            <div class="legal-box">
+                <h3>How to Delete Your Account &amp; Associated Data</h3>
+                <p>Users have complete control over their personal and child profile records and may request permanent account deletion at any time through any of the following methods:</p>
+                <ul>
+                    <li><strong>Method 1 — In-App Account Deletion:</strong> Log in to the NeuroBloom mobile app, tap on the <strong>Profile</strong> tab at the bottom right, select <strong>Delete Account</strong>, and confirm your deletion request.</li>
+                    <li><strong>Method 2 — Email Request:</strong> Send an email from your registered email address to <strong>myneurobloomsupport@gmail.com</strong> with the subject line <em>"Request for NeuroBloom Account Deletion"</em>.</li>
+                    <li><strong>Method 3 — WhatsApp Helpline Request:</strong> Send a WhatsApp message from your registered mobile number to <strong>+91 9136801368</strong> with the text <em>"Request for NeuroBloom Account Deletion"</em>.</li>
+                </ul>
+                <p><strong>Data Deletion &amp; Retention Policy:</strong> Once your deletion request is confirmed, your user account, child profiles, diagnostic selections, activity logs, and progress reports are permanently deleted from our active databases within 14 business days.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="padding-top: 0;">
+        <div class="legal-container">
+            <div class="legal-box" style="text-align: center; background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);">
+                <h3 style="font-size: 1.75rem; margin-bottom: 0.8rem;">Official Contact Details</h3>
+                <p style="margin-bottom: 0.5rem; color: var(--dark);"><strong>WhatsApp Helpline:</strong> +91 9136801368</p>
+                <p style="margin-bottom: 0.5rem; color: var(--dark);"><strong>Official Support Email:</strong> myneurobloomsupport@gmail.com</p>
+                <p style="margin-bottom: 1.2rem; color: var(--dark);"><strong>Official Website:</strong> www.myneurobloom.com</p>
+                <a href="https://wa.me/919136801368?text=Hello%2C%20I%20have%20a%20question%20regarding%20the%20NeuroBloom%20app." target="_blank" rel="noopener" class="btn-whatsapp">
+                    &#128172; Chat on WhatsApp (+91 9136801368)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>NeuroBloom™</h2>
+                <p>Understand. Support. Grow. Built from years of clinical occupational therapy expertise—supporting your efforts, because progress begins with you.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore Platform</h4>
+                <ul>
+                    <li><a href="#parents">For Parents</a></li>
+                    <li><a href="#professionals">For Therapists</a></li>
+                    <li><a href="#videos">Video Exercise Library</a></li>
+                    <li><a href="#learn-section">Learn Knowledge Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal &amp; Support</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#deletion">Account Deletion</a></li>
+                    <li><a href="#contact">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NeuroBloom™ (www.myneurobloom.com). All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
